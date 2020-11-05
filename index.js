@@ -11,11 +11,12 @@ http .createServer((req, res) => { req.on('data', chunk => { const signature =
       const isAllowed = req.headers['x-hub-signature'] === signature;
 
       const body = JSON.parse(chunk);
-
+	
       const isMaster = body?.ref === 'refs/heads/master';
 
       if (isAllowed && isMaster) {
         // do something
+	console.log('webhook triggered', body);
       }
     });
 
