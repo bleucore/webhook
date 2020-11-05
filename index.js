@@ -17,7 +17,8 @@ http .createServer((req, res) => { req.on('data', chunk => { const signature =
  
       const decoded = urlencode.decode(chunk).replace('payload=',''); 
       const body = JSON.parse(decoded);
- 
+      console.log(body);
+	
       const isMaster = body?.ref === 'refs/heads/master'; const directory = 
       GITHUB_REPOSITORIES_TO_DIR[body?.repository?.full_name];
  
