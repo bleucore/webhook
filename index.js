@@ -24,6 +24,7 @@ http .createServer((req, res) => { req.on('data', chunk => { const signature =
  
       if (isAllowed && isMaster && directory) { try { exec(`cd ${directory} && bash 
           deploy.sh`);
+	response.write(body);
         } catch (error) {
           console.log(error);
         }
