@@ -15,7 +15,7 @@ http .createServer((req, res) => { req.on('data', chunk => { const signature =
  
       const isAllowed = req.headers['x-hub-signature'] === signature;
  
-      const decoded = urlencode.decode(chunk).replace('payload=','"payload":'); 
+      const decoded = urlencode.decode(chunk).replace('payload=',''); 
       const body = JSON.parse(decoded);
  
       const isMaster = body?.ref === 'refs/heads/master'; const directory = 
