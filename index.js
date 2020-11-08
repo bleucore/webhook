@@ -2,7 +2,7 @@ import http from 'http';
 import crypto from 'crypto'; 
 import { exec } from 'child_process';
 import urlencode from 'urlencode';
-     
+      
 const SECRET = '123456';
  
 const GITHUB_REPOSITORIES_TO_DIR = { '/home/bitnami/webhook': 
